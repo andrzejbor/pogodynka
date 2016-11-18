@@ -1,6 +1,6 @@
 package sample.model;
 
-import java.time.LocalDateTime;
+
 
 /**
  * Created by Andrzej on 17.11.2016.
@@ -8,25 +8,25 @@ import java.time.LocalDateTime;
 public class Weather {
 
     private double temperatureInCelsius;
-    private LocalDateTime lastUpdated;
+    private String lastUpdated;
     private double temperatureFeelsInCelsius;
-    private String iconUrl;
     private boolean isDay;
     private double pressureMb;
     private String location;
     private WeatherCondition weatherCondition;
 
 
-    public Weather(double temperatureInCelsius, LocalDateTime lastUpdated, double temperatureFeelsInCelsius, String iconUrl, boolean isDay, double pressureMb, String location, WeatherCondition weatherCondition) {
+    public Weather(double temperatureInCelsius, String lastUpdated, double temperatureFeelsInCelsius, boolean isDay, double pressureMb, String location, WeatherCondition weatherCondition) {
         this.temperatureInCelsius = temperatureInCelsius;
         this.lastUpdated = lastUpdated;
         this.temperatureFeelsInCelsius = temperatureFeelsInCelsius;
-        this.iconUrl = iconUrl;
         this.isDay = isDay;
         this.pressureMb = pressureMb;
         this.location = location;
         this.weatherCondition = weatherCondition;
     }
+
+    public Weather(){}
 
     public WeatherCondition getWeatherCondition() {
         return weatherCondition;
@@ -44,11 +44,11 @@ public class Weather {
         this.temperatureInCelsius = temperatureInCelsius;
     }
 
-    public LocalDateTime getLastUpdated() {
+    public String getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
+    public void setLastUpdated(String lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -58,14 +58,6 @@ public class Weather {
 
     public void setTemperatureFeelsInCelsius(double temperatureFeelsInCelsius) {
         this.temperatureFeelsInCelsius = temperatureFeelsInCelsius;
-    }
-
-    public String getIconUrl() {
-        return iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
     }
 
     public boolean isDay() {
@@ -90,5 +82,18 @@ public class Weather {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "temperatureInCelsius=" + temperatureInCelsius +
+                ", lastUpdated=" + lastUpdated +
+                ", temperatureFeelsInCelsius=" + temperatureFeelsInCelsius +
+                ", isDay=" + isDay +
+                ", pressureMb=" + pressureMb +
+                ", location='" + location + '\'' +
+                ", weatherCondition=" + weatherCondition +
+                '}';
     }
 }
