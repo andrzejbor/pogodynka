@@ -33,6 +33,7 @@ public class WeatherServiceJsonOrg implements WeatherService {
             JSONObject json = new JSONObject(IOUtils.toString(new URL(finalUrl), Charset.forName("UTF-8")));
 
             //JSONObject weatherJson =(JSONObject)json.get("location");
+            System.out.println(finalUrl);
             JSONObject currentWeather = json.getJSONObject("current");
             String location = city;
             double temperatureInCelsius = currentWeather.getDouble("temp_c");
